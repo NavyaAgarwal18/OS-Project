@@ -1,8 +1,9 @@
 #include<stdio.h>
-#define MAX_SIZE 110 
-int N; 
+#define MAX_SIZE 110 // Maximum Size Limit
+int N;  // Number Of Processess 
 struct data {
-    int num;
+    // A Structure Consists of :-
+    int num;// id  :-  Name Of The Process
     char id[5];
     int at;
     int bt;
