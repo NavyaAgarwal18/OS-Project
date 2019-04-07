@@ -4,12 +4,12 @@ int N;  // Number Of Processess
 struct data {
     // A Structure Consists of :-
     int num;// id  :-  Name Of The Process
-    char id[5];
-    int at;
-    int bt;
-    int p;
-    int rt;
-    int ft;
+    char id[5];// at  :-  Arrival Time
+    int at;// bt  :-  Burst Time
+    int bt;// p   :-  Priority
+    int p;// ft  :-  Finished Time
+    int rt;// st  :-  Starting Time
+    int ft;// wt  :-  Waiting Time
     int st;
     int wt;
     int trt;
