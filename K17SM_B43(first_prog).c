@@ -1,6 +1,16 @@
 #include<stdio.h>
 #define MAX_SIZE 110 // Maximum Size Limit
 int N;  // Number Of Processess 
+// A Structure Consists of :-
+// id  :-  Name Of The Process
+// at  :-  Arrival Time
+// bt  :-  Burest Time
+// p   :-  Priority
+// ft  :-  Finished Time
+// st  :-  Starting Time
+// wt  :-  Waiting Time
+// trt :-  Total TurnAround Time
+
 struct data {
     
     int num;
@@ -14,6 +24,11 @@ struct data {
     int wt;
     int trt;
 };
+// Variables Which Are Usefull For The PriorityQueue And Queue
+// pqf :- Priority Queue Front
+// pqr :- Priority Queue Rear
+// rqf :- Queue Front
+// rqr :- Queue Rear 
 int pqf = -1, pqr = -1;
 int rqf = -1, rqr = -1;
 struct data* priorityQueue[MAX_SIZE];
