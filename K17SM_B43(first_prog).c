@@ -1,8 +1,6 @@
 #include<stdio.h>
 #define MAX_SIZE 110 
-
 int N; 
-
 struct data {
     int num;
     char id[5];
@@ -15,13 +13,8 @@ struct data {
     int wt;
     int trt;
 };
-
-
-
 int pqf = -1, pqr = -1;
 int rqf = -1, rqr = -1;
-
-
 struct data* priorityQueue[MAX_SIZE];
 struct data* queue[MAX_SIZE];
 
