@@ -5,11 +5,12 @@ void main()
 {
     int bt[20],p[20],wt[20],tat[20],i,j,n=10,total=0,pos,temp;
     float avg_wt,avg_tat;
-   
+    printf("Ten students are going to attend an event there they lots of gift ");
+ 
     printf("\n\nEnter Number of Gifts each Student picks:\n\n");
     for(i=0;i<n;i++)
     {
-    printf("p%d:",i+1);
+    printf("Student%d:",i+1);
     scanf("%d",&bt[i]);
     p[i]=i+1;           
     }
@@ -45,12 +46,12 @@ void main()
     avg_wt=(float)total/n;      
     total=0;
  
-    printf("\nProcess\t\t\t    NO of Gifts    \tTheir Waiting Time\tTheir Turnaround Time");
+    printf("\nStudent\t\t\t    NO of Gifts    \tTheir Waiting Time\tTheir Turnaround Time");
     for(i=0;i<n;i++)
     {
         tat[i]=bt[i]+wt[i];     
         total+=tat[i];
-        printf("\n\np%d\t\t\t  %d\t\t    %d\t\t\t%d",p[i],bt[i],wt[i],tat[i]);
+        printf("\n\nStudent%d\t\t\t  %d\t\t    %d\t\t\t%d",p[i],bt[i],wt[i],tat[i]);
     }
  
     
@@ -66,7 +67,7 @@ printf("\t\tCounter");
         {
             printf("-");
         }
-        printf("p%d",p[i]);
+        printf("Student%d",p[i]);
     }
     printf("\n");  
 getch();
