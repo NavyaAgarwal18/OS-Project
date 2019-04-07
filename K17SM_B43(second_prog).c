@@ -12,9 +12,10 @@ void main()
     {
     printf("Student%d:",i+1);
     scanf("%d",&bt[i]);
-    p[i]=i+1;           
+    p[i]=i+1;    //contains process number       
     }
     
+     //sorting burst time in ascending order using selection sort
     for(i=0;i<n;i++)
     {
         pos=i;
@@ -33,7 +34,9 @@ void main()
         p[pos]=temp;
     }
  
-    wt[0]=0;            
+    wt[0]=0;  //waiting time for first process will be zero   
+ 
+  //calculate waiting time
     for(i=1;i<n;i++)
     {
         wt[i]=0;
@@ -43,18 +46,21 @@ void main()
         total+=wt[i];
     }
  
-    avg_wt=(float)total/n;      
+    avg_wt=(float)total/n;       //average waiting time
     total=0;
  
     printf("\nStudent\t\t\t    NO of Gifts    \tTheir Waiting Time\tTheir Turnaround Time");
     for(i=0;i<n;i++)
     {
-        tat[i]=bt[i]+wt[i];     
+        tat[i]=bt[i]+wt[i];     //calculate turnaround time
         total+=tat[i];
         printf("\n\nStudent%d\t\t\t  %d\t\t    %d\t\t\t%d",p[i],bt[i],wt[i],tat[i]);
     }
  
-    
+    //avg_tat=(float)total/n;     
+	//average turnaround time
+    //printf("\n\nAverage Waiting Time=%f",avg_wt);
+   // printf("\nAverage Turnaround Time=%f\n",avg_tat);
     
     
    
