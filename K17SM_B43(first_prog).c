@@ -31,8 +31,14 @@ struct data {
 // rqr :- Queue Rear 
 int pqf = -1, pqr = -1;
 int rqf = -1, rqr = -1;
+
+// Declaration of Array of Structures
 struct data* priorityQueue[MAX_SIZE];
 struct data* queue[MAX_SIZE];
+
+// Sorting the Process
+// Sort According to the arrival time if any two arrival time are equal then 
+// Sort According to there Process Id
 
 void sort(struct data p[]) {
     int i, j;
@@ -61,21 +67,20 @@ void sort(struct data p[]) {
     }
 }
 
-
+// pqEmpty is a function which tell Priority Queue is empty or not
 int pqEmpty() {
 
     return (pqf == -1 && pqr == -1); 
 }
 
-
-
+// pqTop is a function which returns the top of the Priority Queue
 struct data* pqTop() {
 
     return priorityQueue[pqf];
 }
 
 
-
+// check is a function which put data into the desire position
 void check(struct data *x) {
 
     int i, j;
@@ -97,7 +102,7 @@ void check(struct data *x) {
 }
 
 
-
+// pqPush is a function which push data into the Priority Queue
 void pqPush(struct data* x) {
 
     if (pqf == -1 && pqr == -1) { 
@@ -116,6 +121,7 @@ void pqPush(struct data* x) {
 }
 
 
+// pqPop is a function which pop out the data from Priority Queue
 
 void pqPop() {
 
@@ -136,6 +142,7 @@ void pqPop() {
         pqf = -1;
 }
 
+// rpEmpty is a function which tells Queue is Empty or Not
 
 int rqEmpty() {
 
@@ -143,13 +150,13 @@ int rqEmpty() {
 }
 
 
-
+// rqFront is a function which returns the top of element from Queue
 struct data* rqFront() {
     return queue[rqf];
 }
 
 
-
+// rqPush ia a function which push elements into the Queue
 void rqPush(struct data* x) {
 
     if (rqf == -1 && rqr == -1) {
@@ -168,7 +175,7 @@ void rqPush(struct data* x) {
 }
 
 
-
+// rqPop is a function which pop out the element from Queue
 void rqPop() {
 
    int i;
@@ -188,7 +195,7 @@ void rqPop() {
 }
 
 
-
+// It calculate the average waiting time and average turnaround time
 void calculation(struct data p[], int g[], int n) {
 
     int i, j;
@@ -249,7 +256,7 @@ void calculation(struct data p[], int g[], int n) {
 }
 
 
-
+// Implementation of Multi Level Queue
 void MLQ(struct data p[]) {
 
     int i,j;
@@ -267,20 +274,20 @@ void MLQ(struct data p[]) {
         ghant[i] = -1;
     
     struct data* current;
-    int pq_process = 0; 
-    int rq_process = 0; 
-    int q = 2;
+    int pq_process = 0;// Status of the Priority Queue 
+    int rq_process = 0; // Status of the Queue
+    int q = 2; // Time Quantum for Round Robin
     
     for (i = 0; i < tt; i++) {
 
         for ( j = 0; j < N; j++) {
 
             if (i == p[j].at) {
-                pqPush(&p[j]); 
+                pqPush(&p[j]); // Pushing all elements which has arrived
             }
         }
 
-        if (cpu_state == 0) { 
+        if (cpu_state == 0) {  // Checking Status of CPU
 
             if (!pqEmpty()) { 
 
@@ -354,7 +361,7 @@ void MLQ(struct data p[]) {
     }
 
     
-
+  // Printing Ghant Chart
     printf("\n\n");
     printf("Ghant Chart\n");
     for ( i = 0; i < tt; i++) {
